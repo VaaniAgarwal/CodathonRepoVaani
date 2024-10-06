@@ -34,7 +34,8 @@ public class AddBookServlet extends HttpServlet {
             Integer.parseInt(request.getParameter("price")),
             request.getParameter("desc"),
             Integer.parseInt(request.getParameter("avail")),
-            Byte.parseByte(request.getParameter("bookPicture"))//Check this one not sure about it
+            Byte.parseByte(request.getParameter("bookPicture")),
+            Integer.parseInt(request.getParameter("eventid"))//Check this one not sure about it
             );
             boolean hasInserted = bookDAO.executeInsert(book);
             rd = request.getRequestDispatcher("addBook.jsp");
