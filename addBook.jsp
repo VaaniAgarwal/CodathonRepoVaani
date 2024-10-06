@@ -12,18 +12,76 @@
         <title>Books Dashboard</title>
     </head>
     <body>
-        <h1>Add New Book</h1>
-        <form method="POST" action="AddBookServlet" >
-            Book ID <input type="number" name="bookid" id="bookid"><br><br>
-            Book Name <input type="text" name="bname" id="bname"><br><br>
-            Book Author <input type="text" name="author" id="author"><br><br>
-            Book Publisher <input type="text" name="publish" id="publish"><br><br>
-            Book Genre <input type="text" name="genre" id="genre"><br><br>
-            Book Price <input type="number" name="price" id="price"><br><br>
-            Description <input type="text" name="desc" id="desc"><br><br>
-            Stock Available <input type="number" name="avail" id="avail"><br><br>
-            <input type="file" id="bookPicture" name="bookPicture" accept=".jpg, .jpeg, .png, .gif" class="book-input" required>
-            <input type="Submit" value="Add New Book">
+        <h1 >Add New Book</h1>
+        <form method="POST" action="" >
+            <table border="1" style="border: 1px solid #ddd; border-radius: 5px;">
+            <!-- Book ID -->
+            <tr>
+                <td><label for="book-id">Book ID:</label></td>
+                <td><input type="text" id="bookid" name="bookid" required></td>
+            </tr>
+
+            <!-- Book Name -->
+            <tr>
+                <td><label for="book-name">Book Name:</label></td>
+                <td><input type="text" id="bname" name="bname" required></td>
+            </tr>
+
+            <!-- Book Author -->
+            <tr>
+                <td><label for="book-author">Book Author:</label></td>
+                <td><input type="text" id="author" name="author" required></td>
+            </tr>
+
+            <!-- Book Publisher -->
+            <tr>
+                <td><label for="book-publisher">Book Publisher:</label></td>
+                <td><input type="text" id="publish" name="publish" required></td>
+            </tr>
+
+            <!-- Book Genre -->
+            <tr>
+                <td><label for="book-genre">Book Genre:</label></td>
+                <td><input type="text" id="genre" name="genre" required></td>
+            </tr>
+
+            <!-- Book Price -->
+            <tr>
+                <td><label for="book-price">Book Price ($):</label></td>
+                <td><input type="number" id="price" name="price" step="0.01" required></td>
+            </tr>
+
+            <!-- Book Description -->
+            <tr>
+                <td><label for="book-description">Description:</label></td>
+                <td><textarea id="desc" name="desc" rows="4" required></textarea></td>
+            </tr>
+
+            <!-- Stock Available -->
+            <tr>
+                <td><label for="stock-available">Stock Available:</label></td>
+                <td><input type="number" id="avail" name="avail" required></td>
+            </tr>
+
+            <!-- Event ID -->
+            <tr>
+                <td><label for="event-id">Event ID:</label></td>
+                <td><input type="text" id="eventid" name="eventid" required></td>
+            </tr>
+
+            <!-- Book Image -->
+            <tr>
+                <td><label for="book-image">Book Image:</label></td>
+                <td><input type="file" id="bookPicture" name="bookPicture" accept="image/*" required></td>
+            </tr>
+
+            <!-- Submit Button -->
+            <tr>
+                <td colspan="2" style="text-align:center;">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
         </form>
         
         <%String resultData = (String)session.getAttribute("result");
