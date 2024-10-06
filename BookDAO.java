@@ -39,7 +39,7 @@ public class BookDAO {
     
     public boolean executeInsert(Book book){
         try{
-            pStmt = con.prepareStatement("Insert into Book values(?,?,?,?,?,?,?,?,?)");
+            pStmt = con.prepareStatement("Insert into Book values(?,?,?,?,?,?,?,?,?,?)");
             pStmt.setInt(1,book.getBookID());
             pStmt.setString(2,book.getBookName());
             pStmt.setString(3,book.getAuthor());
@@ -48,7 +48,8 @@ public class BookDAO {
             pStmt.setInt(6,book.getPrice());
             pStmt.setString(7,book.getDesc());
             pStmt.setInt(6,book.getStock());
-            pStmt.setBytes(6,book.getImageData());//Check this one
+            pStmt.setBytes(6,book.getImageData());
+            pStmt.setInt(8,book.getEventId());//Check this one
             int rowCount= pStmt.executeUpdate();
             if(rowCount >0){
                 return true;
