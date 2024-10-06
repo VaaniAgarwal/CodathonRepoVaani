@@ -10,9 +10,9 @@ package com.book.pojo;
  */
 public class Book {
     String bname,author,publisher,genre,desc;
-    int bid,price,stock;
+    int bid,price,stock,eid;
     byte[] image;
-    public Book(int bid,String bname,String author,String publisher,String genre,int price,String desc,int stock,byte[] image)
+    public Book(int bid,String bname,String author,String publisher,String genre,int price,String desc,int stock,byte[] image,int eid)
     {
         this.bid=bid;
         this.bname=bname;
@@ -22,7 +22,8 @@ public class Book {
         this.price=price;
         this.desc=desc;
         this.stock=stock;
-        this.image=image;//Check for image in every addbook file
+        this.image=image;
+        this.eid=eid;//Check for image in every addbook file
     }
     public Book() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -98,5 +99,13 @@ public class Book {
     public void setImageData(byte[] image)
     {
         this.image=image;
+    }
+    public int getEventId()
+    {
+        return eid;
+    }
+    public void setEventId(int eid)
+    {
+        this.eid=eid;
     }
 }
